@@ -40,9 +40,11 @@ php artisan key:generate
 5. Tạo bảng cơ sở dữ liệu
 ```
 php artisan migrate
+```
 6. Rollback cơ sở dữ liệu
 ```
 php artisan migrate:rollback
+```
 7. Rollback cơ sở dữ liệu và tạo lại cơ sở dữ liệu
 ```
 php artisan migrate:rollback
