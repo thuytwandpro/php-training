@@ -40,31 +40,40 @@ php artisan key:generate
 5. Tạo bảng cơ sở dữ liệu
 ```
 php artisan migrate
+6. Rollback cơ sở dữ liệu
 ```
-6. Tạo dữ liệu mẫu
+php artisan migrate:rollback
+7. Rollback cơ sở dữ liệu và tạo lại cơ sở dữ liệu
+```
+php artisan migrate:rollback
+```
+8. Tạo dữ liệu mẫu
 ```
 php artisan db:seed
 ```
-7. Đổi namespace
+9. Đổi namespace
 ```
 php artisan app:name YourNamespace
 ```
-8.  Tạo model và migration
+10.  Tạo model và migration
 ```
 php artisan make:model User --migration
 ```
-9. Tạo lại DB và seed
+11. Tạo lại DB và seed
 ```
 php artisan migrate:refresh --seed
 ```
-10. Xem danh sách tất cả các route có hiệu lực
+12. Xem danh sách tất cả các route có hiệu lực
 ```
 php artisan route:list
 ```
-18:23
-11. Lệnh tạo ứng dụng laravel
+13. Lệnh tạo ứng dụng laravel
 ```
 composer create-project laravel/laravel --prefer-dist "ten app"
+```
+14. Xem tất cả các lệnh tạo file được laravel hỗ trợ
+```
+php artisan make
 ```
 
 ## PHPStorm bật show line bumber
