@@ -67,6 +67,11 @@ Issue #69 Fix bug implement user registration feature
 refs bug #69 Fix bug implement user registration feature
 ```
 
+4. Cách hủy bỏ commit khi chưa push
+```
+git reset HEAD~1
+```
+
 ## TIP
 1. Git là gì?
 2. Tại sao nên sử dụng Git?
