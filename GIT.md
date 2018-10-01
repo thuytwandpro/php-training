@@ -43,6 +43,36 @@ Truy cập trang https://github.com/settings/ssh/new
 - Mục Key thì copy và paste toàn bộ nội dung file id_rsa.pub vào
 - Click button Add SSH key
 
+## Khởi tạo git repository từ thư mục source code có sẵn
+Gõ lệnh:
+```
+cd furbook-username
+git init
+git remote add origin git@github.com:USERNAME/REPOSITORY.git
+```
+
+## Clone git repository từ Git về máy tính cá nhân
+Gõ lệnh:
+```
+git clone git@github.com:USERNAME/REPOSITORY.git
+cp .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+```
+
+## Thay đổi remote URLs
+1. Xem remote hiện tại
+```
+git remote -v
+```
+
+2. Thay đổi remote's URL từ HTTPS sang SSH
+```
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+```
+
 ## Những điều chú ý khi dùng Git
 1. Tạo issue để liệt kê các chức năng cần phát triển. Ví dụ có yêu cầu *"Viết chức năng đăng ký user cho hệ thống"* thì tạo issue là
 **"[69] Implement user registration feature"**
@@ -67,11 +97,6 @@ Issue #69 Fix bug implement user registration feature
 refs bug #69 Fix bug implement user registration feature
 ```
 
-4. Cách hủy bỏ commit khi chưa push
-```
-git reset HEAD~1
-```
-
 ## TIP
 1. Git là gì?
 2. Tại sao nên sử dụng Git?
@@ -83,3 +108,57 @@ git reset HEAD~1
 8. Dùng lệnh gì để hủy bỏ source code đã commit nhưng chưa push?
 9. File .gitignore dùng để làm gì?
 10. Giải thích ngắn gọn về git flow? Phân biệt các nhánh master, develop, features, hotfix, release… ?
+
+## Một số câu lệnh GIT thường dùng
+1. Xem tất cả branch
+```
+git branch -a
+```
+
+2. Xem tên branch hiện tại
+```
+git branch
+```
+
+3. Xem trạng thái các file có thay đổi
+```
+git status
+```
+
+4. Cập nhật branch ở trạng thái mới nhất
+```
+git pull
+* Nếu dưới local có một số file đang có sự thay đổi thì nhiều khi ko thể cập nhật được,
+hãy hủy bỏ hoặc lưu lại những sự thay đổi đó trước khi git pull
+```
+
+5. Checkout một nhánh cụ thể
+```
+git checkout branchName
+```
+
+6. Tạo một nhánh mới và chuyển đến nó
+```
+git checkout -b newBranch
+```
+
+7. Xóa một nhánh
+```
+git branch -d branchName
+* Lưu ý checkout sang branch khác branch cần xóa
+```
+
+8. Cách hủy bỏ các file đã add vào trạng thái sẽ commit
+```
+git reset
+```
+
+9. Cách hủy bỏ các file đã commit nhưng chưa push
+```
+git reset HEAD~1
+```
+
+10. Hiện lịch sử tất cả các commit
+```
+git log
+```
