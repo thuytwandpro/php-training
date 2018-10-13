@@ -47,7 +47,7 @@ php artisan migrate:rollback
 ```
 7. Rollback cơ sở dữ liệu và tạo lại cơ sở dữ liệu
 ```
-php artisan migrate:rollback
+php artisan migrate:refresh
 ```
 8. Tạo dữ liệu mẫu
 ```
